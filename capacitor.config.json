@@ -1,0 +1,7 @@
+{
+  "appId": "com.abg.allaboutgym",
+  "appName": "All About Gym",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": { "androidScheme": "https" }
+}

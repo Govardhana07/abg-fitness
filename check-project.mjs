@@ -1,0 +1,13 @@
+import { readFileSync, existsSync } from 'node:fs';
+import vm from 'node:vm';
+const root = new URL('../', import.meta.url);
+const read = p => readFileSync(new URL(p, root), 'utf8');
+const html = read('index.html');
+const js = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m => m[1]).filter(s => s.trim());
+if (!html.includes('All About Gym') || !html.includes('id="home"')) throw new Error('Core ABG UI not found');
+for (const [i, source] of js.entries()) new vm.Script(source, { filename: `index.html inline script ${i+1}` });
+for (const p of ['manifest.webmanifest','sw.js','icons/abg-icon.svg','supabase/schema.sql','capacitor.config.json','docs/PRODUCTION_CHECKLIST.md','supabase-config.js','cloud-sync.js','DEPLOYMENT_SETUP.md','ANDROID_RELEASE_GUIDE.md','supabase/functions/abg-coach/index.ts','netlify.toml']) if (!existsSync(new URL(p, root))) throw new Error(`Missing required file: ${p}`);
+JSON.parse(read('manifest.webmanifest')); JSON.parse(read('capacitor.config.json')); JSON.parse(read('package.json')); new vm.Script(read('cloud-sync.js'), { filename: 'cloud-sync.js' });
+console.log(`ABG project checks passed: ${js.length} inline script(s) parse; manifest/config JSON valid; required files present.`);
+console.log('Cloud sync JavaScript syntax and deployment files checked.');
+console.log('Note: this is static validation, not a live backend, AI-provider, or Android device test.');

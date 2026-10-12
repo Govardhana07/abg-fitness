@@ -1,0 +1,23 @@
+{
+  "name": "abg-all-about-gym",
+  "version": "1.4.0",
+  "private": true,
+  "description": "All About Gym fitness PWA, optional Supabase cloud sync, AI Edge Function template, and Capacitor Android starter",
+  "scripts": {
+    "start": "npx serve .",
+    "check": "node scripts/check-project.mjs",
+    "android:add": "npx cap add android",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:prepare": "npm install && npx cap add android && npx cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/android": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "serve": "^14.2.4"
+  },
+  "license": "UNLICENSED"
+}

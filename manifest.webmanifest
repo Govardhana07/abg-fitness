@@ -1,0 +1,14 @@
+{
+  "name": "All About Gym — ABG",
+  "short_name": "ABG Fitness",
+  "description": "Workout planning, nutrition tracking and fitness progress in one place.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090b0c",
+  "theme_color": "#ffd21f",
+  "icons": [
+    {"src":"./icons/abg-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
