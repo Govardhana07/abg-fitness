@@ -1,4 +1,4 @@
-# ABG — All About Gym
+# ABG — All About Gym app
 
 Mobile-first fitness web app starter with black/neon-yellow branding. The current UI supports local workout tracking, approximate food logging, check-ins, profile targets and JSON backup/restore. A PWA shell and Capacitor configuration are included. Optional Supabase email authentication/cloud backup and a server-side AI coach Edge Function template are included but require your own project credentials and deployment.
 
